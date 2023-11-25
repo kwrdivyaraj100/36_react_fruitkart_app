@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './Products.css';
+import Dropdown from 'react-bootstrap/Dropdown';
+import DropdownButton from 'react-bootstrap/DropdownButton';
 
 function Products(props) {
 
@@ -14,8 +16,18 @@ function Products(props) {
 
     useEffect(() => { getData() }, []);
 
+    function sortAlphebetAcending() {
+        let productsCopy = [...products];
+        let sorted = productsCopy.sort((a, b) => {
+            return (a.name.toLowerCase() < b.name.toLowerCase()) ? -1 : 1;
+        });
+        setProducts(sorted);
+    }
+
+
     return ((products.flag) ?
         <div className='products-container'>
+
             <div className='products'>
                 {products.productList.map(item => {
                     return (
