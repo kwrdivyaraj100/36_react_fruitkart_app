@@ -42,3 +42,10 @@
     margin-right: 30px;
 }
 
+.cart-length{
+    margin: 3px;
+    font-size: 14px;
+    vertical-align: super;
+    color: #fdd101;
+}
+
