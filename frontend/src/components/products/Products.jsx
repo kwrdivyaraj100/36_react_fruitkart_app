@@ -45,7 +45,15 @@ function Products(props) {
 
     return ((products.flag) ?
         <div className='products-container'>
-
+  <div className="sort-button">
+                <DropdownButton variant="success" title="Sort By ">
+                    <Dropdown.Item eventKey="1" onClick={sortAlphebetAscending}>A -to- Z</Dropdown.Item>
+                    <Dropdown.Item eventKey="2" onClick={sortAlphebetDescending}>Z -to- A</Dropdown.Item>
+                    <Dropdown.Divider />
+                    <Dropdown.Item eventKey="3" onClick={sortPriceDescending}>High to Low</Dropdown.Item>
+                    <Dropdown.Item eventKey="4" onClick={sortPriceAscending}>Low to High</Dropdown.Item>
+                </DropdownButton>
+            </div>
             <div className='products'>
                 {products.productList.map(item => {
                     return (
