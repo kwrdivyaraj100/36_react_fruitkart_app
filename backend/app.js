@@ -1,5 +1,5 @@
 const express = require('express');
-const cors = require ('cors');
+const cors = require('cors');
 const productsRouter = require('./routes/productRoute.js');
 
 
@@ -9,6 +9,6 @@ app.use(express.json());
 
 app.use(productsRouter);
 
-app.listen(3300, ()=>{
+app.listen(3300, () => {
     console.log("Backend Application Running on 3300");
 });

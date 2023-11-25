@@ -1,7 +1,7 @@
 const router = require('express').Router();
 
 const data = {
-    productItems:[
+    productItems: [
         {
             id: "1",
             name: "Apple Fresh",
@@ -35,7 +35,7 @@ const data = {
     ]
 }
 
-router.get('/products', (req, res)=>{
+router.get('/products', (req, res) => {
     res.json(data);
 });
 
