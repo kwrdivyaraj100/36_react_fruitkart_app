@@ -26,7 +26,7 @@ function Header(props) {
             <Link to='/cart' className='cart'>
               <i className='fas fa-shopping-cart' />
               <span className='cart-length'>
-                {/* {props.cartItems.length} */}
+                {props.cartItems.length}
               </span>
             </Link>
           </li>

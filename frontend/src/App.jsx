@@ -55,11 +55,11 @@ function App() {
 
     return (
         <BrowserRouter>
-            <Header />
+            <Header cartItems={cartItems}/>
             <Routes>
-                <Route exact path='/' element={<Products />} />
+                <Route exact path='/' element={<Products handleAddProduct={handleAddProduct} />} />
                 <Route exact path='/signup' element={<Signup />} />
-                <Route exact path='/cart' element={<Cart />} />
+                <Route exact path='/cart' element={<Cart cartItems={cartItems} handleAddProduct={handleAddProduct} handleRemoveProduct={handleRemoveProduct} handleCartClearence={handleCartClearence} />} />
             </Routes>
         </BrowserRouter>
     );
