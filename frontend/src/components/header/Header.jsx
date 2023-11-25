@@ -18,7 +18,7 @@ function Header(props) {
         </ul>
         <ul>
           <li>
-            <Link to='/signup'><SignUp></SignUp></Link>
+            <Link to='/signup'>Signup</Link>
           </li>
         </ul>
         <ul>
