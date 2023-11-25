@@ -33,3 +33,7 @@
     padding: 0px 15px;
 }
 
+.header-links ul li a:hover{
+    color: #fffc3c;
+}
+
