@@ -90,3 +90,8 @@
     color: white;
     cursor: pointer;
 }
+
+.clear-cart-button:hover{
+    background-color: #0e557e;
+}
+
