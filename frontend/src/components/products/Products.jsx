@@ -16,10 +16,18 @@ function Products(props) {
 
     useEffect(() => { getData() }, []);
 
-    function sortAlphebetAcending() {
+    function sortAlphebetAscending() {
         let productsCopy = [...products];
         let sorted = productsCopy.sort((a, b) => {
             return (a.name.toLowerCase() < b.name.toLowerCase()) ? -1 : 1;
+        });
+        setProducts(sorted);
+    }
+
+    function sortAlphebetDescending() {
+        let productsCopy = [...products];
+        let sorted = productsCopy.sort((a, b) => {
+            return (a.name.toLowerCase() < b.name.toLowerCase()) ? 1 : -1;
         });
         setProducts(sorted);
     }
