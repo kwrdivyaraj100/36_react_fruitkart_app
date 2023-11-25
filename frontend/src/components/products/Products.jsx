@@ -17,35 +17,32 @@ function Products(props) {
     useEffect(() => { getData() }, []);
 
     function sortAlphebetAscending() {
-        let productsCopy = [...products];
-        let sorted = productsCopy.sort((a, b) => {
-            return (a.name.toLowerCase() < b.name.toLowerCase()) ? -1 : 1;
-        });
-        setProducts(sorted);
+        let productListCopy = [...products.productList];
+        let sorted = productListCopy.sort((a, b) => (a.name.toLowerCase() < b.name.toLowerCase()) ? -1 : 1);
+        setProducts({ flag: true, productList: sorted });
     }
 
     function sortAlphebetDescending() {
-        let productsCopy = [...products];
-        let sorted = productsCopy.sort((a, b) => {
-            return (a.name.toLowerCase() < b.name.toLowerCase()) ? 1 : -1;
-        });
-        setProducts(sorted);
+        let productListCopy = [...products.productList];
+        let sorted = productListCopy.sort((a, b) => (a.name.toLowerCase() < b.name.toLowerCase()) ? 1 : -1);
+        setProducts({ flag: true, productList: sorted });
     }
 
     function sortPriceAscending() {
-        let productsCopy = [...products];
-        setProducts(productsCopy.sort((a, b) => a.price - b.price));
+        let productListCopy = [...products.productList];
+        let sorted = productListCopy.sort((a, b) => a.price - b.price);
+        setProducts({ flag: true, productList: sorted });
     }
 
     function sortPriceDescending() {
-        let productsCopy = [...products];
-        setProducts(productsCopy.sort((a, b) => b.price - a.price));
+        let productListCopy = [...products.productList];
+        let sorted = productListCopy.sort((a, b) => b.price - a.price);
+        setProducts({ flag: true, productList: sorted });
     }
-
 
     return ((products.flag) ?
         <div className='products-container'>
-  <div className="sort-button">
+            <div className="sort-button">
                 <DropdownButton variant="success" title="Sort By ">
                     <Dropdown.Item eventKey="1" onClick={sortAlphebetAscending}>A -to- Z</Dropdown.Item>
                     <Dropdown.Item eventKey="2" onClick={sortAlphebetDescending}>Z -to- A</Dropdown.Item>
